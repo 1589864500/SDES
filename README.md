@@ -1,5 +1,7 @@
 # Code of Scaling Multi-Objective Security Games Provably via Space Discretization Based Evolutionary Search (SDES).
 
+## Declare
+Thank you for your timely attention. At present, there are some problems in this project, but I promise that the project will be able to run within 2 days. It could take months to make the project more readable and prescriptable. Not much effort at the moment, sorry.~
 
 ## Experiment environment.
 The experimental environment is consistent with the first work of MOSG, including (i) the randomly-generated security games, i.e., $\mathcal{D}$'s and $\mathcal{A}$'s payoff obey the uniform integral distribution of [1, 10], while the defender and attacker payoffs obey the uniform integral distribution of [-10, -1], (ii) the problem scale is divided into three dimensions: the attacker number $N$, the target needed to be protected number $T$, and the resource ratio $r$, satisfying the following constraint: $N\geq3$, $T=[25, 50, 75, 100, 200, 400, 600, 800, 1000]$, $r=0.2$, the resource equals $r\cdot T$, 
