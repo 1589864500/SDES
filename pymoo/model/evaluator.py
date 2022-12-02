@@ -94,8 +94,8 @@ class Evaluator:
         else:
             return pop
 
-    def _eval(self, problem, pop, **kwargs):
-
+    def _eval(self, problem, pop, isDominatedSort=False, **kwargs):
+        '''虽然这段内容是pymoo源码，但是为了方便，做出如下修改（去重与求pf）'''
         # NOTE: Problem._evaluate的出口
         out = problem.evaluate(pop.get("X"),
                                return_values_of=self.evaluate_values_of,
@@ -114,15 +114,22 @@ class Evaluator:
                     self.vair_global[key] = val
                     if 'CT_TOTAL' in out:
                         self.vair_global['CT_TOTAL'] = out['CT_TOTAL']
-                else:
+                elif isDominatedSort:
+                    #! 非支配排序
                     val = np.vstack([self.vair_global[key], val])
                     idx = Performance().getPF_idx(val)
                     self.vair_global[key] = val[idx]
                     if 'CT_TOTAL' in out:
                         self.vair_global['CT_TOTAL'] = np.vstack([self.vair_global['CT_TOTAL'], out['CT_TOTAL']])[idx]
+                else: 
+                    #! 不排序
+                    self.vair_global[key] = np.vstack([self.vair_global[key], val])
+                    if 'CT_TOTAL' in out:
+                        self.vair_global['CT_TOTAL'] = np.vstack([self.vair_global['CT_TOTAL'], out['CT_TOTAL']])
         # DEBUG
         # if (len(self.vair_global['CT_TOTAL']) != len(self.vair_global['FIT_TOTAL'])):
         #     print('ERROR! len(self.vair_global[CT_TOTAL]) != len(self.vair_global[FIT_TOTAL])')
+        #! 去重
         if kwargs['algorithm'].n_gen % 10 == 0:
             if 'FIT_TOTAL' in out: self.vair_global['FIT_TOTAL'], idx = np.unique(self.vair_global['FIT_TOTAL'], return_index=True, axis=0)
             if 'CT_TOTAL' in out: self.vair_global['CT_TOTAL'] = self.vair_global['CT_TOTAL'][idx]

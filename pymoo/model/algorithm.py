@@ -336,7 +336,7 @@ class Algorithm:
         # while termination criterion not fulfilled
         # while tqdm(self.has_next()):
 
-        for i in tqdm(range(2000)):
+        for i in tqdm(range(400)):
             if self.has_next():
                 self.next()
             else:

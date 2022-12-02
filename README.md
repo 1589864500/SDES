@@ -1,7 +1,7 @@
 # Code of Scaling Multi-Objective Security Games Provably via Space Discretization Based Evolutionary Search (SDES).
 
 ## Declare
-Thank you for your timely attention. At present, there are some problems in this project, but I promise that the project will be able to run within 2 days. It could take months to make the project more readable and prescriptable. Not much effort at the moment, sorry.~
+Thank you for your timely attention. At present, our project is working, and the dependencies we use are very common. If you have any questions, you can submit the issue, and we will reply in the first time. It could take months to make the project more readable and prescriptable. Not much effort at the moment, sorry.
 
 ## Experiment environment.
 The experimental environment is consistent with the first work of MOSG, including (i) the randomly-generated security games, i.e., $\mathcal{D}$'s and $\mathcal{A}$'s payoff obey the uniform integral distribution of [1, 10], while the defender and attacker payoffs obey the uniform integral distribution of [-10, -1], (ii) the problem scale is divided into three dimensions: the attacker number $N$, the target needed to be protected number $T$, and the resource ratio $r$, satisfying the following constraint: $N\geq3$, $T=[25, 50, 75, 100, 200, 400, 600, 800, 1000]$, $r=0.2$, the resource equals $r\cdot T$, 
@@ -27,5 +27,10 @@ The Pareto dominance relationship is the solution-level criterion, IGD+ and HV a
 
 ## Reference PF Construction
 To find a well-convergent and well-spaced approximate PF, quantitative indicators HV and IGD+ are selected to evaluate convergence and diversity. However, IGD+ evaluation requires reference PF that the randomly-generated security games cannot provide. A feasible method to construct reference PF is to collect a set of PFs produced by all algorithms. Algorithms involved in the PF building include SDES and all $\epsilon$-constraint algorithms, including ORIGAMI-M, ORIGAMI-A, ORIGAMI-M-BS, DIRECT-MIN-COV.
+
+## Time Consume
+If you run MOSGs.epsilon_constraint.py. or pymoo.integercode.SDES_NSGA-III.py, in the 'Results' folder, the name of result file records the time consume of the method.
+*If you just want to get an overview of the time consumption of SDES without dumping the results, please run the script pymoo.integercode.SDES_NSGA-III_time_400.py.*
+> Note that if you set the pop_size and max_gen parameter to 100, SDES can deal with the $N=20$, $T=1000$ MOSG problem with ease. In our paper, we show that pop_size=max_gen=100 is enough for convergence.
 
 ### End

@@ -33,22 +33,13 @@ SHOW = True
 epsilon = 1
 DEBUG = False
 
-# # NOTE ORIGAMIM
-# # n=3-5的实验做完了，n=5的target极限是200。
-# Solver = 'ORIGAMIM'
-# time_expensive = np.full(shape=[len(obj_np), target_np.size], fill_value=True)
-# time_expensive[0, 1:] = False  # obj=3
-# # time_expensive[1, 3:5] = False  # 4
-# # time_expensive[2, 2] = False  # 5
-# # time_expensive[3, 3] = False  # 6
-# # time_expensive[4, 1] = False  # 7
-# # time_expensive[5, 1] = False  # 8
-# # time_expensive[6, 1] = False  # 9
-# # time_expensive[7, 1] = False  # 10
-# # time_expensive[8, 1] = False  # 11
-# # time_expensive[9, 1] = False  # 12
-# # time_expensive[10, 1] = False  # 13
-# # time_expensive[11, 1] = False  # 14
+# NOTE ORIGAMIM
+# n=3-5的实验做完了，n=5的target极限是200。
+Solver = 'ORIGAMIM'
+time_expensive = np.full(shape=[len(obj_np), target_np.size], fill_value=True)
+time_expensive[0, 1:] = False  # obj=3
+time_expensive[1, 3:5] = False  # 4
+time_expensive[2, 2] = False  # 5
 
 # time_expensive[0:4, 1] = False  # obj, target=25
 
@@ -57,17 +48,11 @@ DEBUG = False
 # Solver = 'ORIGAMIA'
 # time_expensive = np.full(shape=[len(obj_np), target_np.size], fill_value=True)
 # time_expensive[0, 1:7] = False  # obj=3
-# # time_expensive[1, 3:5] = False  # 4
-# # time_expensive[2, 2] = False  # 5
-# # time_expensive[3, 3] = False  # 6
-# # time_expensive[4, 1] = False  # 7
-# # time_expensive[5, 1] = False  # 8
-# # time_expensive[6, 1] = False  # 9
-# # time_expensive[7, 1] = False  # 10
-# # time_expensive[8, 1] = False  # 11
-# # time_expensive[9, 1] = False  # 12
-# # time_expensive[10, 1] = False  # 13
-# # time_expensive[11, 1] = False  # 14
+# time_expensive[1, 3:5] = False  # 4
+# time_expensive[2, 2] = False  # 5
+# time_expensive[3, 3] = False  # 6
+# time_expensive[4, 1] = False  # 7
+# time_expensive[5, 1] = False  # 8
 
 # time_expensive[0:6, 1] = False  # obj, target=25
 
@@ -76,38 +61,23 @@ DEBUG = False
 # Solver = 'ORIGAMIMBS'
 # time_expensive = np.full(shape=[len(obj_np), target_np.size], fill_value=True)
 # time_expensive[0, 1:] = False  # obj=3
-# # time_expensive[1, 3:5] = False  # 4
-# # time_expensive[2, 2] = False  # 5
-# # time_expensive[3, 3] = False  # 6
-# # time_expensive[4, 1] = False  # 7
-# # time_expensive[5, 1] = False  # 8
-# # time_expensive[6, 1] = False  # 9
-# # time_expensive[7, 1] = False  # 10
-# # time_expensive[8, 1] = False  # 11
-# # time_expensive[9, 1] = False  # 12
-# # time_expensive[10, 1] = False  # 13
-# # time_expensive[11, 1] = False  # 14
+# time_expensive[1, 3:5] = False  # 4
+# time_expensive[2, 2] = False  # 5
+# time_expensive[3, 3] = False  # 6
+# time_expensive[4, 1] = False  # 7
 
-# time_expensive[0:5, 1] = False  # obj, target=25
 
-# NOTE DIRECTMINCOV
-# n=3-5的实验做完了，n=5的target极限是200。
-Solver = 'DIRECTMINCOV'
-time_expensive = np.full(shape=[len(obj_np), target_np.size], fill_value=True)
-time_expensive[0, 1:] = False  # obj=3
+# # NOTE DIRECTMINCOV
+# # n=3-5的实验做完了，n=5的target极限是200。
+# Solver = 'DIRECTMINCOV'
+# time_expensive = np.full(shape=[len(obj_np), target_np.size], fill_value=True)
+# time_expensive[0, 1:] = False  # obj=3
 # time_expensive[1, 3:5] = False  # 4
 # time_expensive[2, 2] = False  # 5
 # time_expensive[3, 3] = False  # 6
 # time_expensive[4, 1] = False  # 7
 # time_expensive[5, 1] = False  # 8
-# time_expensive[6, 1] = False  # 9
-# time_expensive[7, 1] = False  # 10
-# time_expensive[8, 1] = False  # 11
-# time_expensive[9, 1] = False  # 12
-# time_expensive[10, 1] = False  # 13
-# time_expensive[11, 1] = False  # 14
 
-time_expensive[0:7, 1] = False  # obj, target=25
 
 
 for object_idx in range(obj_np.size):

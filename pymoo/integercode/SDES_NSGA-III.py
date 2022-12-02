@@ -35,12 +35,6 @@ from pymoo.algorithms.mosg_genetic_nsga3 import MOSGG
 from pymoo.integercode.MOSG import SGs1
 from pymoo.integercode.truing import Truing
 
-# ref_num = pop_size
-# target_n = 25
-# gen_n = 1000
-# gen_n = pop_size
-# time = '00:50:00'
-# pop_size_np = np.linspace(start=50, stop=500, num=10, dtype=np.int32)
 obj_np = np.arange(3,20)
 target_np0 = np.array([10])  # 0
 target_np1 = np.linspace(25, 100, 4, dtype=np.int32)  # 1-4
@@ -50,36 +44,33 @@ RES_DIR:str = './Results/integercode' # ????
 Solver = 'GeneticMOSGinteger'
 SEED = 2
 SHOW = True
-SAVE_HISTORY = False
+SAVE_HISTORY = False  # it will consume much memory (50G)
 MINCOV = 0
 CODE = 'integer'
-# CODE = 'withoutOpt'
-# CODE = 'continuous'
-# CODE = 'time'
 
 time_expensive = np.full(shape=[obj_np.size, target_np.size], fill_value=True)
 
 # NOTE 问题规模
-# NOTE FIX Objecitve
-# time_expensive[0, 1:] = False # 3
-# time_expensive[1, 1:7] = False # 4
+## NOTE FIX Objecitve
+time_expensive[0, 1:] = False # 3
+time_expensive[1, 1:7] = False # 4
 time_expensive[2, 4] = False # 5
-# time_expensive[3, 1:5] = False # 6
-# time_expensive[4, 1:3] = False # 7
-# time_expensive[5, 1] = False # 8
+time_expensive[3, 1:5] = False # 6
+time_expensive[4, 1:3] = False # 7
+time_expensive[5, 1] = False # 8
+time_expensive[6, 4:6] = False # 9
+time_expensive[7, 3:5] = False # 10
+time_expensive[8, 4] = False # 11
+time_expensive[9, 3] = False # 12
+time_expensive[10, 6] = False # 13
+time_expensive[11, 6] = False # 14
+time_expensive[12, 6] = False # 15
+time_expensive[13, 6] = False # 16
+time_expensive[14, 6] = False # 17
+time_expensive[15, 6] = False # 18
+time_expensive[16, 6] = False # 19
 
-# time_expensive[6, 4:6] = False # 9
-# time_expensive[7, 3:5] = False # 10
-# time_expensive[8, 4] = False # 11
-# time_expensive[9, 3] = False # 12
-# time_expensive[10, 6] = False # 13
-# time_expensive[11, 6] = False # 14
-# time_expensive[12, 6] = False # 15
-# time_expensive[13, 6] = False # 16
-# time_expensive[14, 6] = False # 17
-# time_expensive[15, 6] = False # 18
-# time_expensive[16, 6] = False # 19
-# NOTE FIX Target
+## NOTE FIX Target
 # time_expensive[:, 1] = False # 25
 # time_expensive[1:10, 2] = False # 50
 # time_expensive[1:7, 3] = False # 75
@@ -94,7 +85,7 @@ time_expensive[2, 4] = False # 5
 #   1.最大轮数 2.最长时间 3.x变化幅度 4.fitness变化幅度
 max_gen = np.linspace(0,900,10,dtype=np.int32)
 # TERMINATION1 = get_termination('n_gen', gen_n)  # maxgen
-# TERMINATION2 = get_termination('time', '00:50:00')  # time
+# TERMINATION2 = get_termination('time', '00:30:00')  # time
 # TERMINATION3 = get_termination('x_tol', tol=0.0025, n_last=30, n_max_gen=600, nth_gen=5)  # x_tol
 # TERMINATION4 = get_termination('f_tol', tol=0.0025, n_last=30, n_max_gen=600, nth_gen=5)  # f_tol
 # TERMINATION = [TERMINATION2, TERMINATION1, TERMINATION3, TERMINATION4]
@@ -141,14 +132,15 @@ idx_mut = 0
 # ALGOTHRIM
 # NOTE 
 # EXPERIMENTTYPE = 'ComparisonNaiveEAandORIGAMIG_ORIGAMIG'
-# EXPERIMENTTYPE:str = 'IndependentRepeatExperiments'  # 本次运行的序列号
-EXPERIMENTTYPE:str = 'N=4GFIndependentRepeatExperiments'  # 本次运行的序列号
+EXPERIMENTTYPE:str = 'IndependentRepeatExperiments'  # 本次运行的序列号
 # EXPERIMENTTYPE:str = 'SensitivityStudy'  # 本次运行的序列号
-# DESCRIPTION:str = EXPERIMENTTYPE + "_SEED1" # 本次运行的序列号
-DESCRIPTION:str = EXPERIMENTTYPE + "_SEED2" # 本次运行的序列号
+DESCRIPTION:str = EXPERIMENTTYPE + "_SEED1" # 本次运行的序列号
 SAVE_PATH:Dict[str,str] = {}  # 存到json中的文件目录列表
 Done = []
-SEED_list = random.shuffle(range(1000))[:30]
+# SEED_list = list(range(1000))
+# random.shuffle(SEED_list)
+# SEED_list = SEED_list[:30]
+SEED_list = list(range(30))
 for idx_cro in range(len(CROSSOVER_1)):
     ct_star_total = None
     for obj_idx, obj_n in enumerate(obj_np):
