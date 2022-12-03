@@ -26,9 +26,9 @@ target_np3 = np.array([200,400])
 target_np = np.hstack((target_np0, target_np1, target_np2))
 time_record = np.full((obj_np.size, target_np.size), 0.)
 SAVE_PATH = {}
-RES_DIR = './Results/IndependentRepeat/seed1/'
+RES_DIR = './Results/epsilon-constraint'
 RES_DIR_NAME = 'Results'
-NUM = '0_1_e=1'  # 本次运行的序列号
+NUM = ''  # 本次运行的序列号
 SHOW = True
 epsilon = 1
 DEBUG = False
@@ -38,44 +38,40 @@ DEBUG = False
 Solver = 'ORIGAMIM'
 time_expensive = np.full(shape=[len(obj_np), target_np.size], fill_value=True)
 time_expensive[0, 1:] = False  # obj=3
-time_expensive[1, 3:5] = False  # 4
-time_expensive[2, 2] = False  # 5
-
-# time_expensive[0:4, 1] = False  # obj, target=25
+time_expensive[1, 1:7] = False  # 4
+time_expensive[2, 1:5] = False  # 5
 
 # # NOTE ORIGAMIA
 # # n=3-5的实验做完了，n=5的target极限是200。
 # Solver = 'ORIGAMIA'
 # time_expensive = np.full(shape=[len(obj_np), target_np.size], fill_value=True)
-# time_expensive[0, 1:7] = False  # obj=3
-# time_expensive[1, 3:5] = False  # 4
-# time_expensive[2, 2] = False  # 5
-# time_expensive[3, 3] = False  # 6
-# time_expensive[4, 1] = False  # 7
+# time_expensive[0, 1:6] = False  # obj=3
+# time_expensive[1, 1:5] = False  # 4
+# time_expensive[2, 1:4] = False  # 5
+# time_expensive[3, 1] = False  # 6
+# # time_expensive[4, 1] = False  # 7
 # time_expensive[5, 1] = False  # 8
-
-# time_expensive[0:6, 1] = False  # obj, target=25
 
 # # NOTE ORIGAMIMBS
 # # n=3-5的实验做完了，n=5的target极限是200。
 # Solver = 'ORIGAMIMBS'
 # time_expensive = np.full(shape=[len(obj_np), target_np.size], fill_value=True)
 # time_expensive[0, 1:] = False  # obj=3
-# time_expensive[1, 3:5] = False  # 4
-# time_expensive[2, 2] = False  # 5
-# time_expensive[3, 3] = False  # 6
-# time_expensive[4, 1] = False  # 7
+# time_expensive[1, 1:6] = False  # 4
+# time_expensive[2, 1:5] = False  # 5
+# time_expensive[3, 1:4] = False  # 6
+# time_expensive[4, 1:3] = False  # 7
 
 
 # # NOTE DIRECTMINCOV
 # # n=3-5的实验做完了，n=5的target极限是200。
 # Solver = 'DIRECTMINCOV'
 # time_expensive = np.full(shape=[len(obj_np), target_np.size], fill_value=True)
-# time_expensive[0, 1:] = False  # obj=3
-# time_expensive[1, 3:5] = False  # 4
-# time_expensive[2, 2] = False  # 5
-# time_expensive[3, 3] = False  # 6
-# time_expensive[4, 1] = False  # 7
+# time_expensive[0, 1:8] = False  # obj=3
+# time_expensive[1, 1:6] = False  # 4
+# time_expensive[2, 1:5] = False  # 5
+# time_expensive[3, 1:5] = False  # 6
+# time_expensive[4, 1:3] = False  # 7
 # time_expensive[5, 1] = False  # 8
 
 
@@ -121,11 +117,11 @@ for object_idx in range(obj_np.size):
                 with open(file_dir, 'w') as json_file:
                         json.dump(obj=SAVE_PATH, fp=json_file, indent=4)
 
-                # fit可视化
-                # Visualization(n_rows=obj_n, title=para_temp).add(res.F).show()
-                filename = '-'.join([Solver, para_dir + '.png'])
-                file_dir = os.path.join(RES_DIR, para_dir, filename)
-                Visualization(n_rows=obj_n, fig_title=para,
-                              sharex=True, sharey=True,
-                              hspace=0, wspace=0).add(solver.res.F).save(fname=file_dir)
+                # # fit可视化
+                # # Visualization(n_rows=obj_n, title=para_temp).add(res.F).show()
+                # filename = '-'.join([Solver, para_dir + '.png'])
+                # file_dir = os.path.join(RES_DIR, para_dir, filename)
+                # Visualization(n_rows=obj_n, fig_title=para,
+                #               sharex=True, sharey=True,
+                #               hspace=0, wspace=0).add(solver.res.F).save(fname=file_dir)
 
