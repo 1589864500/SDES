@@ -9,7 +9,7 @@ import math
 
 import sys
 # sys.path.append('/home/wuyp/Projects/pymoo/')
-sys.path.append('/home/haohao/Project_wuyp/MOSG/pymoo/')
+sys.path.append('')
 
 from pymoo.MOSGsGeneticSolver.performance import Performance
 from pymoo.MOSGsGeneticSolver.visualization import Visualization

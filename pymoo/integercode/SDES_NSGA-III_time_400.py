@@ -14,7 +14,7 @@ import json
 import os
 import gc
 import sys
-sys.path.append('/home/haohao/Project_wuyp/MOSG/pymoo/')
+sys.path.append('')
 print(sys.path)
 
 from pymoo.util.termination import max_gen

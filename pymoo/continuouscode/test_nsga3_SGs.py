@@ -13,7 +13,7 @@ import json
 import os
 import sys
 # sys.path.append('/home/wuyp/Projects/pymoo/')
-sys.path.append('/home/haohao/Project_wuyp/MOSG/pymoo/')
+sys.path.append('')
 
 from pymoo.util.termination import max_gen
 from typing import *
