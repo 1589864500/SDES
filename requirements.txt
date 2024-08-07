@@ -1,0 +1,3 @@
+pymoo
+numpy
+torch

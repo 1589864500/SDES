@@ -1,0 +1,11 @@
+# 问题配置
+obj_n: 5
+target_n: 50
+code_type: integer # integer or float
+repetition: 30
+# 算法配置
+n_gen: 100
+ref_num: 100
+pop_size: 100
+
+writein_dir: ./results/Flexibility/
