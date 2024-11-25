@@ -33,4 +33,14 @@ If you run MOSGs.epsilon_constraint.py. or pymoo.integercode.SDES_NSGA-III.py, i
 *If you just want to get an overview of the time consumption of SDES without dumping the results, please run the script pymoo.integercode.SDES_NSGA-III_time_400.py.*
 > Note that if you set the pop_size and max_gen parameter to 100, SDES can deal with the $N=20$, $T=1000$ MOSG problem with ease. In our paper, we show that pop_size=max_gen=100 is enough for convergence. You can run pymoo.integercode.SDES_NSGA-III_time_100.py.
 
+## Bibtex
+```
+@inproceedings{Qian2024SDES,
+author = {Qian H, Wu Y, Qin R, Chen Y, Zhou A},
+title = {Scaling Multi-Objective Security Games Provably via Space Discretization Based Evolutionary Search},
+booktitle = {Swarm and Evolutionary Computation (SWEVO)},
+year = {2024}
+}
+```
+
 ### End
