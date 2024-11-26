@@ -1,4 +1,4 @@
-# Code of Scaling Multi-Objective Security Games Provably via Space Discretization Based Evolutionary Search (SDES).
+# Code of Provable Space Discretization Based Evolutionary Search for Scalable Multi-Objective Security Games (SDES).
 
 ## Declare
 Thank you for your timely attention. We provide a PYTHON version of the MOSG problem simulation environment in the `dev_v2` branch, which also contains a simple implementation of the SDES framework. The `dev_v2` branch is more concise and more readable. 
@@ -35,11 +35,10 @@ If you run MOSGs.epsilon_constraint.py. or pymoo.integercode.SDES_NSGA-III.py, i
 
 ## Bibtex
 ```
-@inproceedings{Qian2024SDES,
-author = {Qian H, Wu Y, Qin R, Chen Y, Zhou A},
-title = {Scaling Multi-Objective Security Games Provably via Space Discretization Based Evolutionary Search},
-booktitle = {Swarm and Evolutionary Computation (SWEVO)},
-year = {2024}
+@article{Qian-SDES,
+author = {Hong Qian, Yu-Peng Wu, Rong-Jun Qin, Xin An, Yi Chen, Aimin Zhou},
+title = {Provable Space Discretization Based Evolutionary Search for Scalable Multi-Objective Security Games},
+booktitle = {Swarm and Evolutionary Computation (SWEVO)}
 }
 ```
 
