@@ -1,4 +1,4 @@
-# Code of Scaling Multi-Objective Security Games Provably via Space Discretization Based Evolutionary Search (SDES).
+# Code of Provable Space Discretization Based Evolutionary Search for Scalable Multi-Objective Security Games (SDES).
 
 ## Declare
 Thank you for your timely attention. Compared to the previous version in the `mian` branch of this repository, we have refactored the code to enhance its readability and extensibility. Moreover, we will supplement the MATLAB version of the program as soon as possible. At present, our project is ready for run, and the dependencies we use are very common as shown in `requirements.txt`. If you have any questions, you can submit the issue, and we will reply in the first time. 
@@ -11,11 +11,10 @@ where $r$ is generally much less than 1 due to the limited resources.
 
 ## Bibtex
 ```
-@inproceedings{Qian2024SDES,
-author = {Qian H, Wu Y, Qin R, Chen Y, Zhou A},
-title = {Scaling Multi-Objective Security Games Provably via Space Discretization Based Evolutionary Search},
-booktitle = {Swarm and Evolutionary Computation (SWEVO)},
-year = {2024}
+@article{Qian-SDES,
+author = {Hong Qian, Yu-Peng Wu, Rong-Jun Qin, Xin An, Yi Chen, Aimin Zhou},
+title = {Provable Space Discretization Based Evolutionary Search for Scalable Multi-Objective Security Games},
+booktitle = {Swarm and Evolutionary Computation (SWEVO)}
 }
 ```
 
